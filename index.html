@@ -22,7 +22,7 @@
 
 <body>
 
-<header>
+
 <!--replaced dot with icon noun project-->
 <!--Noun Project used for icon of painter palette titled Painter by con painter by Phạm Thanh Lộc  reference is in footer-->
     <!-- Al Assistance Citation (Required):
@@ -36,23 +36,24 @@
 <!--ChatGPT assistance with header to show icon and color-->
 
 <!--ChatGPT help with fixing icon for GitHub-->
+  <header>
   <nav class="navbar">
 
     <div class="brand">
       <img src="./images/icon.svg" alt="Painter palette icon">
-      <span>Mary's Page</span>
+      Mary's Page
     </div>
 
-    <div class="desktop-nav main-nav">
-  <a href="index.html" class="active">Home</a>
-  <a href="about.html">About Me</a>
-  <a href="gallery.html">Gallery</a>
-  <a href="media.html">Media</a>
-  <a href="contact.html">Contact Me</a>
-</div>
-    <button class="mobile-toggle">
-      <span></span>
-    </button>
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Me</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="media.html">Media</a></li>
+      <li><a href="contact.html">Contact Me</a></li>
+    </ul>
 
   </nav>
 </header>
