@@ -977,17 +977,25 @@ header {
 
 /*ChatGPT assistance check box showed up in image code provided to remove box*/
 /* ===== FIX hidden checkbox ===== */
+/* Hide checkbox */
 .menu-toggle {
   display: none;
 }
 
-/* ===== Hamburger hidden on desktop ===== */
+/* Desktop layout */
+.desktop-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hide hamburger on desktop */
 .hamburger {
   display: none;
 }
 
-/* ===== Mobile styles ===== */
+/* ===== MOBILE ONLY ===== */
 @media (max-width: 768px) {
+
   .hamburger {
     display: block;
     font-size: 24px;
@@ -998,7 +1006,7 @@ header {
     display: none;
   }
 
-  /* Show menu when checked */
+  /* Show menu when clicked */
   .menu-toggle:checked + .hamburger + .desktop-nav {
     display: block;
   }
