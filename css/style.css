@@ -914,9 +914,15 @@ header {
   font-weight: 600;
 }
 
-.menu-toggle,
+/ChatGPT help with recovering hidden hamburger*/
+.menu-toggle {
+  display: none;
+}
+
 .hamburger {
   display: none;
+  font-size: 28px;
+  cursor: pointer;
 }
 
 /*ChatGPT suggested adding this to fix error in header it said the code in html may be appearing in css*/
@@ -943,4 +949,28 @@ header {
   margin-left: auto; /* pushes links to the right */
   display: flex;
   gap: 20px;
+}
+
+/*ChatGPT code provided to add in order to show missing hamburger*/
+@media (max-width: 900px) {
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .menu-toggle:checked ~ .desktop-nav {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 64px;
+    right: 0;
+    width: 220px;
+    background-color: #d9c7bb;
+    padding: 15px;
+    gap: 12px;
+  }
 }
