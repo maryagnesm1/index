@@ -209,15 +209,10 @@ Prompt summary: tell me why font is not working*/
   background:#fff;
 }
 
-/* Mobile toggle button (hamburger) */
-.mobile-toggle{
-  width:40px;height:40px;border-radius:999px;
-  border:1px solid rgba(0,0,0,0.15);
-  background:#fff;
-  display:none;
-  align-items:center;justify-content:center;
-  cursor:pointer;
-}
+/*ChatGPT instructed to remove original mobile toggle pointer after adding new checkbox and hamburger 
+toward bottom of CSS*/
+
+
 .mobile-toggle span{
   width:18px;height:2px;border-radius:999px;background:#111;
   position:relative;display:block;
@@ -230,10 +225,7 @@ Prompt summary: tell me why font is not working*/
 .mobile-toggle span::before{top:-6px;}
 .mobile-toggle span::after{top:6px;}
 
-@media(max-width:900px){
-  .desktop-nav{display:none;}
-  .mobile-toggle{display:flex;}
-}
+/*ChatGPT said to remove media max 900px*/
 
 /* Mobile nav: slide in from right (clean, modern) */
 .mobile-nav{
