@@ -931,3 +931,16 @@ header {
   background-color: #d9c7bb;
   padding: 15px 25px;
 }
+
+/*ChatGPT help in fixing header titles appearing on side of page after trying to restore header*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* THIS is the key */
+}
+
+.desktop-nav {
+  margin-left: auto; /* pushes links to the right */
+  display: flex;
+  gap: 20px;
+}
