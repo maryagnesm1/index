@@ -863,3 +863,10 @@ footer{
   background: var(--accent);      /* Accent color */
   margin-right:10px;              /* Space between dot and text */
 }
+
+/*ChatGPT help to force header fix for colors*/
+/* FORCE header color (fix for GitHub issue) */
+header,
+.navbar {
+  background-color: #d9c7bb !important;
+}
