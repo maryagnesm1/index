@@ -974,3 +974,32 @@ header {
     gap: 12px;
   }
 }
+
+/*ChatGPT assistance check box showed up in image code provided to remove box*/
+/* ===== FIX hidden checkbox ===== */
+.menu-toggle {
+  display: none;
+}
+
+/* ===== Hamburger hidden on desktop ===== */
+.hamburger {
+  display: none;
+}
+
+/* ===== Mobile styles ===== */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  /* Show menu when checked */
+  .menu-toggle:checked + .hamburger + .desktop-nav {
+    display: block;
+  }
+}
