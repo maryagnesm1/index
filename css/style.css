@@ -864,6 +864,8 @@ footer{
   margin-right:10px;              /* Space between dot and text */
 }
 
+
+
 /*ChatGPT help to force header fix for colors*/
 /* FORCE header color (fix for GitHub issue) */
 header,
@@ -876,3 +878,45 @@ header {
   position: relative;
   z-index: 10;
 }
+
+/*ChatGPT provided more code to help fix header after it did not appear correctly*/
+.navbar {
+  height: 64px;
+  background-color: #d9c7bb;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 22px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 750;
+}
+
+.brand img {
+  width: 28px;
+  height: 28px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 600;
+}
+
+.menu-toggle,
+.hamburger {
+  display: none;
+}
+
+
