@@ -919,4 +919,15 @@ header {
   display: none;
 }
 
+/*ChatGPT suggested adding this to fix error in header it said the code in html may be appearing in css*/
+.nav-links {
+  display: none;
+}
 
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d9c7bb;
+  padding: 15px 25px;
+}
