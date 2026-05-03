@@ -870,3 +870,9 @@ header,
 .navbar {
   background-color: #d9c7bb !important;
 }
+
+/*ChatGPT assistance to fix header issue*/
+header {
+  position: relative;
+  z-index: 10;
+}
