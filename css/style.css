@@ -718,10 +718,15 @@ Prompt summary: Provided screenshot and asked ChatGPT how to center text.
    - We keep the footer simple and readable
    - Focus is on clarity, contrast, and consistency
 ========================================================= */
-footer{
-  /* Dark background creates visual separation from the page */
-  background:#000;
-
+/*ChatGPT help to fix footer color*/
+footer {
+  background: #d9c7bb;   /* matches header */
+  color: #333;           /* readable dark text */
+  text-align: center;
+  padding: 18px;
+  font-size: .85rem;
+  border-top: 1px solid rgba(0,0,0,0.08);
+}
   /* Light text ensures strong contrast and accessibility */
   color:#9ca3af;
 
