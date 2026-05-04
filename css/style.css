@@ -949,3 +949,18 @@ header {
     gap: 12px;
   }
 }
+
+/*ChatGPT help to move hamburger and nav to the right*/
+/* FINAL FIX — push menu to right */
+.desktop-nav {
+  margin-left: auto !important;
+  display: flex;
+  gap: 22px;
+}
+
+/* make navbar full width */
+.navbar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
