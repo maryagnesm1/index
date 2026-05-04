@@ -1,588 +1,252 @@
-/* =========================================================
-  STUDENT DEMO (ITD 210)
-  Goal: Show a clean, engaging, Apple-style front page:
-  ✅ Hero (image or video)
-  ✅ Responsive mobile nav (slide-in)
-  ✅ Card-based layout (links to future pages)
-  ✅ Semantic structure + accessibility basics
-  ✅ Commented code so students can learn from it
-========================================================= */
+/* ChatGPT assistance adding root variables */
 
-/* =========================================================
-  DESIGN TOKENS (CSS VARIABLES)
-  What this means:
-  - These are global variables that store colors, spacing,
-    and visual values used across the entire site.
-  - They live inside :root so they are available everywhere.
-
-  Why we do it this way:
-  - One change updates the entire site (consistency).
-  - Prevents repeating the same color values over and over.
-  - Makes redesigns fast and less error-prone.
-  - This is how modern, professional websites are built.
-
-  How students should use this:
-  - Choose ONE primary accent color (brand color).
-  - Optionally use a secondary accent for highlights.
-  - Reference these variables using var(--variable-name).
-
-  Example:
-  background-color: var(--bg);
-  color: var(--ink);
-
-  Real-world note:
-  - This pattern is used in design systems, Apple-style UI,
-    Tailwind, and large production websites.
-========================================================= */
-:root{
-  --ink:#111111;                /* Primary text color */
-  --bg:#f5f5f7;                 /* Main page background (light gray) */
-  --card:#ffffff;               /* Card and surface background */
-  --muted:#5b5b5b;              /* Secondary / less important text */
-  --line:rgba(0,0,0,0.12);      /* Subtle borders and dividers */
-  --radius:26px;                /* Rounded corners for cards */
-  --shadow:0 18px 50px rgba(0,0,0,0.14); /* Soft elevation shadow */
-
-  /* Accent palette (students should pick ONE main brand color) */
-  --accent:#4a90e2;             /* Primary accent (buttons, links) */
-  --accent2:#804070;            /* Optional secondary accent */
+:root {
+  --radius: 12px;
+  --card: #ECDED2;
+  --line: #2d2b29;
 }
 
-/* =========================================================
-  GLOBAL RESET + BASE STYLES
-  What this section does:
-  - Creates a clean, predictable starting point for styling
-  - Removes browser inconsistencies
-  - Sets global typography, colors, and layout behavior
-
-  Why this matters:
-  - Browsers all have different default styles
-  - Without a reset, layouts behave inconsistently
-  - Professionals always control the baseline first
-========================================================= */
-
-/* RESET
-   Removes default spacing and ensures consistent box sizing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; 
-  /* box-sizing: border-box makes width/height calculations predictable */
-}
-
-
-CSS CITATION
-/* Al Assistance Citation (Required)
-Tool: ChatGPT
-Date: 2026-02-2
-Where used: font 
-What Al did: helped provide CSS code assistance with Vand Sans from Google fonts
-Prompt summary: "Why is my icon dropping to a new line? Provide CSS fix
-
-/*Updated font to Vend Sans*/
-
-/*ChatGPT helped with coding CSS for Google font*/
-/* BODY
-   Global text styles and page background */
-
+/* BODY */
+/* Changed all text to Annie Use Your Telescope from Google Fonts */
 body {
-  font-family: 'Vend Sans', Arial, Helvetica, sans-serif;
-font-weight: 400;
-
-
-
-  /* Uses design tokens defined in :root */
-  background: var(--bg);    /* page background color */
-  color: var(--ink);        /* default text color */
-
-  line-height: 1.5;         /* improves readability */
-
-  /* Prevents horizontal scrolling caused by overflow */
-  overflow-x: hidden;
-}
-h1, h2, h3 {
-  font-family: 'Vend Sans', Arial, Helvetica, sans-serif;
-  font-weight: 700;
-}
-/* MEDIA DEFAULTS
-   Makes images and videos responsive by default */
-img,
-video {
-  max-width: 100%;          /* never overflow their container */
-  height: auto;             /* maintain aspect ratio */
-  display: block;           /* removes inline spacing issues */
+  margin: 0;
+  font-family: "Annie Use Your Telescope", cursive;
 }
 
-/* LINKS
-   Inherit text color instead of default blue */
-a {
-  color: inherit;
-}
+/* HERO SECTION */
+/* ChatGPT assistance with hero image to move up to match CSS */
+/*Extra help from ChatGPT for formatting placement of text on image*/
+/*hero image of mural taken of me by Jennifer McCarthy in New York City*/
 
-/* MAIN CONTENT OFFSET
-   Accounts for the fixed header height */
-main {
-  padding-top: 64px;        /* prevents content hiding behind fixed nav */
-}
-
-
-/* =========================================================
-   HEADER + NAV (desktop + mobile)
-========================================================= */
-
-/*
-AI Assistance Citation  
-Tool: ChatGPT
-Date: 2026-02-01
-Where used: header
-What AI did: provided code to make header background slightly more solid so video doesn't distract
-Prompt summary: Asked for help to format header sizing and this was a suggestion from ChatGPT
-/*ChatGPT suggested change header nav background background: rgba(245,245,247,0.92); to background: rgba(245,245,247,0.98); to make slightly more solid so video does not distract*/
-header{
-  position:fixed;top:0;left:0;width:100%;height:64px;
-  background: rgba(245,245,247,0.98); 
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(0,0,0,0.06);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 22px;
-  z-index:1000;
-}
-header{
-  background: rgba(245,245,247,0.98);
-}
-
-
-/* Replaced brand dot with artist icon using Noun Project
-AI Assistance Citation (Required)
-Tool: ChatGPT
-Date: 2026-02-01
-Where used: brand
-What AI did: provided said that icon is causing text style issue not seeing proper font. 
-Prompt summary: "why is font not working."
-*/
-
-
-
-/*AI Assistance Citation (Required)
-Tool: ChatGPT
-Date: 2026-02-01
-Where used: brand
-What AI did: provided code to change brand dot to icon.
-Prompt summary: tell me why font is not working*/
-*/
-/*ChatGPT helped bring back original font that was changed. brand section*/
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight:750;
-  letter-spacing:.02em;
-}
-
-.brand-icon svg{
-  width:28px;
-  height:28px;
-  display:block;
-}
-
-
-
-/* Desktop nav links */
-.desktop-nav{
-  display:flex;
-  gap:22px;
-  font-size:.95rem;
-}
-.desktop-nav a{
-  text-decoration:none;
-  color:#333;
-  opacity:.82;
-  font-weight:600;
-}
-.desktop-nav a:hover{opacity:1;color:var(--accent);}
-
-/* Optional: a single “primary” nav link like Apple */
-.desktop-nav a.primary{
-  padding:8px 12px;
-  border-radius:999px;
-  border:1px solid var(--line);
-  background:#fff;
-}
-
-/*ChatGPT instructed to remove original mobile toggle pointer after adding new checkbox and hamburger 
-toward bottom of CSS*/
-
-
-.mobile-toggle span{
-  width:18px;height:2px;border-radius:999px;background:#111;
-  position:relative;display:block;
-}
-.mobile-toggle span::before,
-.mobile-toggle span::after{
-  content:"";
-  position:absolute;left:0;width:18px;height:2px;border-radius:999px;background:#111;
-}
-.mobile-toggle span::before{top:-6px;}
-.mobile-toggle span::after{top:6px;}
-
-/*ChatGPT said to remove media max 900px*/
-
-/* Mobile nav: slide in from right (clean, modern) */
-.mobile-nav{
-  position:fixed;
+.hero-image{
+  position:absolute;
   top:0;
-  right:-100%;
-  width:min(82vw,420px);
-  height:100vh;
-  background:rgba(10,10,14,0.92);
-  backdrop-filter:blur(18px);
-  padding:88px 22px 24px;
-  transition:right .35s ease;
-  z-index:999;
+  left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
 }
-.mobile-nav.open{right:0;}
-.mobile-nav a{
-  display:block;
-  text-decoration:none;
-  color:#fff;
-  font-size:1.35rem;
-  font-weight:700;
-  padding:12px 10px;
-  border-radius:14px;
+.hero h1 {
+  font-size: 3rem;
 }
-.mobile-nav a:hover{background:rgba(255,255,255,0.08);}
-/* =========================================================
-   HERO SECTION (IMAGE or VIDEO)
-
-   What is a "hero"?
-   - The hero is the first, most visible section of a website
-   - It introduces the purpose, tone, and audience of the site
-
-   Why we use a hero:
-   - Immediately tells users what this site is about
-   - Creates visual impact and hierarchy
-   - Guides the user into the rest of the page
-
-   Student rule:
-   - Choose ONE hero type:
-       ✔ Hero Image (simpler, recommended)
-       ✔ Hero Video (advanced, larger file sizes)
-========================================================= */
-
-
-/*Al Assistance Citation (Required):
-Tool: ChatGPT
-Date: 2026-02-01
-Where used: Hero Image
-What Al did: Provided CSS and told me to make sure HTML has hero rapper
-What I did: Provided screenshot of issue and ChatGPT provided code.*/
-
-/*ChatGPT told me to delete original hero code and hero video to correct positioning.*/
-/*ChatGPT used to help with hero size format issue.*/
-
-/*/*Al Assistance Citation (Required):
-Tool: ChatGPT
-Date: 2026-02-02
-Where used: Hero Image
-What Al did: Had issue where hero was again over riding cards. AI provided code 
-What I did: Provided screenshot of issue and ChatGPT provided code.*/
-
-/*ChatGPT told me to delete original hero code and hero video to correct positioning.*/
-/*ChatGPT used to help with hero size format issue.*/
-
-
-
-/*/*Al Assistance Citation (Required):
-Tool: ChatGPT
-Date: 2026-02-02
-Where used: Hero Image
-What Al did: Had issue where hero was again over riding cards. AI provided code 
-What I did: Provided screenshot and asked how to center hero lettering.*/
-/*ChatGPT to help with centuring Lettering
-
-/*Al Assistance Citation (Required):
-Tool: ChatGPT
-Date: 2026-02-02
-Where used: Hero Image
-What Al did: Provided code to help with lettering formatting that was leaning to the left. 
-What I did: Provided screenshot of issue and ChatGPT provided code.*/
-
 
 .hero{
-  position: relative;   /* KEEP THIS */
-  min-height: 80vh;
-  padding: 6rem 1.5rem;
-  overflow: hidden;
+  height:90vh;
+  position:relative;
+  color:white;
+}
 
-  /* ADD THESE */
+/* HERO TEXT */
+/* Hero text from hero assignment */
+.hero-text {
+  background: rgba(0,0,0,0.4);
+  padding: 20px 40px;
+  border-radius: 8px;
+}
+/*ChatGPT placement of hero title on image help*/
+
+.hero-title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+
+/*ChatGPT assistance with text to be placed lower left on hero image*/
+/*ChatGPT provided more assistance in making lower right text larger and more readable*/
+.hero-subtext {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  max-width: 380px;
+  font-size: 1.8rem;
+  line-height: 1.7;
+}
+
+/*ChatGPT help with readability added shadow help making text more readable against image*/
+.hero-subtext {
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+/* NAVIGATION BAR */
+/* ChatGPT assistance with adding back border and nav on top along with hamburger menu */
+
+/*Experiment*/
+/*ChapGPT helped after I showed screenshot of color from Canvas Color Palette Generator*/
+.main-nav {
+  position: sticky;
+  top: 0;
+  background-color: #E3D2C5;
+  border-top: 4px solid black;
+  border-bottom: 1px solid #ccc;
+  z-index: 100;
+}
+
+.nav-header {
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
+  justify-content: space-between;
+  padding: 10px 20px;
 }
 
-.hero-media{
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.logo {
+  font-size: 1.2rem;
+  margin: 0;
 }
 
-.hero-media video{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hero-inner{
-  position: relative;
-  z-index: 1;
-}
-
-.section{
-  position: relative;
-  z-index: 2;
-}
-
-
- 
-
-
-.hero-media img,
-.hero-media video {
-  width: 100%;
-  height: 100%;
-
-  /* Ensures image/video fills the area without distortion */
-  object-fit: cover;
-}
-
-/* ---------------------------------------------------------
-   DARK OVERLAY
-   Why this exists:
-   - Improves text readability
-   - Prevents bright images from overpowering text
---------------------------------------------------------- */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-
-  /* Semi-transparent black overlay */
-  background: rgba(0,0,0,0.46);
-
-  /* Sits above media but below text */
-  z-index: 1;
-}
-
-/* ---------------------------------------------------------
-   SOFT COLOR AURA (OPTIONAL)
-   Purpose:
-   - Adds visual interest
-   - Mimics modern Apple-style lighting effects
-   - Not required, but shows advanced layering
---------------------------------------------------------- */
-.hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-
-  background:
-    radial-gradient(circle at 20% 80%, rgba(128,64,112,0.33), transparent 55%),
-    radial-gradient(circle at 80% 20%, rgba(74,144,226,0.33), transparent 55%);
-
-  /* Blends color glow with the background */
-  mix-blend-mode: overlay;
-}
-
-/* ---------------------------------------------------------
-   HERO CONTENT (TEXT + BUTTONS)
-   - Highest layer so it stays readable
---------------------------------------------------------- */
-.hero-inner {
-  position: relative;
-  z-index: 3;
-
-  /* Limits text width for readability */
-  max-width: 980px;
-  padding: 0 12px;
-}
-
-/* Small uppercase label (context setter) */
-.hero-kicker {
-  color: rgba(255,255,255,0.88);
-  font-weight: 700;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  font-size: .85rem;
-  margin-bottom: 10px;
-}
-
-/* Main hero headline */
-.hero h1 {
-  /* Responsive font size based on screen width */
-  font-size: clamp(2.2rem, 6vw, 4.1rem);
-  font-weight: 850;
-  line-height: 1.05;
-  color: #fff;
-
-  /* Improves contrast over video/image */
-  text-shadow: 0 8px 28px rgba(0,0,0,0.55);
-}
-
-/* Supporting hero paragraph */
-.hero p {
-  margin: 14px auto 0;
-  max-width: 58ch;   /* limits line length for readability */
-  font-size: 1.15rem;
-  color: rgba(255,255,255,0.9);
-}
-
-/* ---------------------------------------------------------
-   HERO ACTION BUTTONS (OPTIONAL)
-   Purpose:
-   - Give users a clear next step
-   - Encourage interaction immediately
---------------------------------------------------------- */
-.hero-actions {
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 18px;
+  gap: 20px;
 }
 
-/* Base button style */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+/*ChatGPT suggestion to add hover and better usability since it give visual indicator when hovering over card*/
 
-  padding: 11px 16px;
-  border-radius: 999px; /* pill shape */
-
+.nav-links li a {
   text-decoration: none;
-  font-weight: 700;
-  font-size: .95rem;
-
-  /* Glassmorphism-inspired styling */
-  border: 1px solid rgba(255,255,255,0.22);
-  color: #fff;
-  background: rgba(255,255,255,0.10);
-  backdrop-filter: blur(10px);
+  color: black;
+  font-weight: bold;
 }
 
-/* Primary button (strongest call to action) */
-.btn.primary {
-  background: #fff;
-  color: #111;
-  border-color: transparent;
-}
-
-/* Hover feedback */
-.btn:hover {
-  filter: brightness(1.07);
-}
-
-/* =========================================================
-   INTRO + CARDS (MAIN CONTENT AREA)
-
-   What this section represents:
-   - This is the “content hub” of the page
-   - It introduces what the site offers and guides users
-     to the most important pages using cards
-
-   Why cards are used in ITD 210:
-   - Cards are a modern, professional layout pattern
-   - They work well on mobile and desktop
-   - They visually separate content without overwhelming users
-   - They help users scan, choose, and navigate quickly
-========================================================= */
-
-/* ---------------------------------------------------------
-   SECTION WRAPPER
-   Purpose:
-   - Creates visual separation from the hero above
-   - Establishes padding and a clean background
---------------------------------------------------------- */
-.section{
-  background:#fff;
-
-  /* Subtle divider between hero and content */
-  border-top:1px solid rgba(0,0,0,0.06);
-
-  /* Top, left/right, bottom spacing */
-  padding:52px 18px 70px;
-}
-
-/* Inner container to control line length and layout */
-.section-inner{
-  max-width:1180px;  /* prevents text from becoming too wide */
-  margin:0 auto;     /* centers content on the page */
-}
-
-/* Section heading */
-.section h2{
-  font-size:2rem;
-  margin-bottom:8px;
-
-  /* Slight tightening for modern typography */
-  letter-spacing:-.02em;
-}
-
-/* Lead paragraph (intro text) */
-.section .lead{
-  color:var(--muted);     /* softer text color */
-  max-width:60ch;        /* readable line length */
-  font-size:1.05rem;
-}
-
-
-/* Al Assistance Citation (Required)
-Tool: ChatGPT
-Date: 2026-02-1
-Where used: Below hero and above cards Welcome section text was leaning to left
-What Al did: Centered h2 as well as lead paragraph and .section inner. Helped center test.
-Prompt summary: Provided screenshot and asked ChatGPT how to center text.
-
-
-/*ChatGPT issue with About Section*/
-.section-inner{
-  text-align: center;
-}
-.section .lead{
-  margin: 0 auto;          /* keeps the paragraph centered */
+.nav-links li a:hover {
+  text-decoration: underline;
 }
 
 
 
-/* ---------------------------------------------------------
-   CARD GRID LAYOUT
+.menu-toggle {
+  display: none;
+}
 
-   Why CSS Grid is used:
-   - Automatically adapts to screen size
-   - No media queries required for basic responsiveness
-   - Cards reflow naturally on mobile
---------------------------------------------------------- */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* MOBILE NAVIGATION */
+
+@media (max-width: 768px) {
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  .menu-toggle:checked + .hamburger + .nav-links {
+    display: flex;
+  }
+
+  .nav-header {
+    flex-wrap: wrap;
+  }
+
+  .nav-links li {
+    padding: 10px 0;
+    text-align: center;
+    border-top: 1px solid #ccc;
+  }
+
+}
+
+/* GENERAL SECTION SPACING */
+/*ChatGPT design suggestion for more space between hero and card section*/
+section {
+  padding: 60px 20px;
+}
+
+/*ChatGPT suggestion which helps with centering and readability on large monitors*/
+.section-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+
+/* MOBILE FIRST PROMO BOX */
+/* Media queries from responsive design assignment */
+
+.promo-box {
+  background-color: orange;
+  width: 100%;
+  padding: 20px;
+}
+
+/* TABLET */
+
+@media (min-width: 600px) {
+  .promo-box {
+    background-color: green;
+    width: 75%;
+    padding: 30px;
+  }
+}
+
+/* DESKTOP */
+
+@media (min-width: 900px) {
+  .promo-box {
+    background-color: blue;
+    width: 50%;
+    padding: 40px;
+  }
+}
+
+/*ChatGPT helped with creating section before cards as description container*/
+.creativity-strip{
+  background-color:#ECDED2;
+  text-align:center;
+  padding:24px 28px;
+  font-size:1.3rem;
+  font-weight:600;
+  letter-spacing:0.5px;
+
+  max-width:700px;
+  margin:40px auto;
+
+  border-radius:12px;
+  border:1px solid #d6c5b6;
+  box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+
+/* CARDS */
+/* Added cards section */
+
+
+
 .cards{
   margin-top:26px;
-
-  /* Grid layout for flexible card columns */
   display:grid;
-
-  /* Creates responsive columns that shrink/grow */
   grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-
-  gap:18px; /* space between cards */
+  gap:18px;
+  background:white;
+  padding:20px;
+  border-radius:12px;
 }
 
-/* ---------------------------------------------------------
-   CARD CONTAINER
 
-   Each card represents:
-   - One idea, page, or feature
-   - A clear entry point for the user
---------------------------------------------------------- */
+
+
+/* CARD CONTAINER */
+/* Each card represents one idea or page */
+/*ChatGPT assistance add this code to keep from stretching and help with sizing*/
+
+/*ChatGPT assistance to show icon on cards*/
+.card-media img{
+  width:120px;
+  height:auto;
+  display:block;
+  margin:25px auto;
+}
+
 .card{
   border-radius:var(--radius);
   background:var(--card);
@@ -591,7 +255,7 @@ Prompt summary: Provided screenshot and asked ChatGPT how to center text.
   /* Soft elevation to lift card off page */
   box-shadow:0 14px 35px rgba(0,0,0,0.08);
 
-  overflow:hidden; /* keeps media clipped inside rounded corners */
+  overflow:hidden;
 
   /* Smooth hover animation */
   transition:
@@ -600,372 +264,55 @@ Prompt summary: Provided screenshot and asked ChatGPT how to center text.
     border-color .25s ease;
 }
 
-/* Hover interaction = feedback to the user */
 .card:hover{
-  transform:translateY(-5px); /* subtle lift */
-  box-shadow:var(--shadow);
-  border-color:rgba(0,0,0,0.22);
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,0.12);
 }
 
-/* ---------------------------------------------------------
-   CARD MEDIA (IMAGE or VIDEO)
 
-   Why media is at the top:
-   - Creates immediate visual interest
-   - Helps users understand content before reading text
---------------------------------------------------------- */
-.card-media{
-  height:160px;
-  background:#000;
-  position:relative;
-}
 
-.card-media img,
-.card-media video{
-  width:100%;
-  height:100%;
-
-  /* Ensures media fills the area without distortion */
-  object-fit:cover;
-
-  opacity:.95;
-}
-
-/* Dark gradient overlay improves text contrast */
-.card-media::after{
-  content:"";
-  position:absolute;
-  inset:0;
-
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0) 55%
-  );
-}
-
-/* ---------------------------------------------------------
-   CARD CONTENT (TEXT AREA)
-
-   Purpose:
-   - Explains what the card represents
-   - Uses hierarchy to guide reading order
---------------------------------------------------------- */
 .card-body{
-  padding:16px 16px 18px;
+  padding:16px;
 }
 
-/* Small label for categorization */
 .card-tag{
   display:inline-block;
-  font-size:.75rem;
-  font-weight:800;
-  color:var(--accent2);
-  letter-spacing:.08em;
-  text-transform:uppercase;
   margin-bottom:8px;
+  color:#555;
 }
 
-/* Card title */
-.card h3{
-  font-size:1.25rem;
-  margin-bottom:8px;
-}
-
-/* Card description */
-.card p{
-  color:var(--muted);
-  font-size:.98rem;
-  line-height:1.55;
-}
-
-/* ---------------------------------------------------------
-   CARD LINK (CALL TO ACTION)
-
-   Why this is important:
-   - Tells users exactly what will happen next
-   - Improves usability and navigation clarity
---------------------------------------------------------- */
 .card-link{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:12px;
-
   text-decoration:none;
-  font-weight:750;
-  color:var(--accent);
+  color:black;
+  font-weight:bold;
 }
 
-/* Simple hover feedback */
-.card-link:hover{
-  text-decoration:underline;
-}
-/* =========================================================
-   FOOTER
-
-   What this section is:
-   - The footer is the closing section of the webpage
-   - It appears at the bottom of the page on all screens
-
-   Why the footer matters:
-   - Provides ownership and copyright information
-   - Signals the end of the content
-   - Looks professional and complete (employers expect this)
-   - Often contains contact info, credits, or legal text
-
-   In this project:
-   - We keep the footer simple and readable
-   - Focus is on clarity, contrast, and consistency
-========================================================= */
-/*ChatGPT help to fix footer color*/
-footer {
-  background: #d9c7bb;   /* matches header */
-  color: #333;           /* readable dark text */
-  text-align: center;
-  padding: 18px;
-  font-size: .85rem;
-  border-top: 1px solid rgba(0,0,0,0.08);
-}
-  /* Light text ensures strong contrast and accessibility */
-  color:#9ca3af;
-
-  /* Centers footer content horizontally */
+/* FOOTER */
+/*Experiment with color*/
+/*ChapGPT helped after I showed screenshot of color from Canvas Color Palette Generator*/
+/*ChatGPT also helped with adding extra space between card section and footer 60px*/
+footer{
   text-align:center;
-
-  /* Adds breathing room around the text */
-  padding:18px;
-
-  /* Slightly smaller text to show it is secondary content */
-  font-size:.85rem;
+  padding:20px;
+  background-color:#E3D2C5;
+  color: black;
+  margin-top:60px;
 }
 
-/* =========================================================
-   MOBILE POLISH (Responsive Design Adjustments)
+/* Flaticon icon credit */
+/* Card icon attribution */
 
-   What this is:
-   - A media query that ONLY runs on small screens
-   - Specifically targets devices 600px wide or smaller
-     (phones and small tablets)
-
-   Why this is important:
-   - Most users browse the web on phones first
-   - Content that looks good on desktop can feel
-     cramped or broken on mobile if not adjusted
-   - Responsive design is an industry requirement,
-     not a bonus feature
-
-   What we are doing here:
-   - Reducing horizontal padding so content fits better
-   - Adjusting spacing to prevent text from feeling squished
-   - Slightly resizing text for readability on small screens
-
-   Key idea for students:
-   - You are NOT creating a second website
-   - You are adapting ONE website to work everywhere
-========================================================= */
-@media (max-width:600px){
-
-  /* Tighten header padding so it fits comfortably on phones */
-  header{
-    padding:0 14px;
-  }
-
-  /* Reduce hero padding so the headline stays visible */
-  .hero{
-    padding:78px 14px;
-  }
-
-  /* Slightly adjust paragraph size for easier mobile reading */
-  .hero p{
-    font-size:1.05rem;
-  }
-
-  /* Reduce section padding so users don’t scroll forever */
-  .section{
-    padding:46px 14px 64px;
-  }
+.icon-credit {
+  font-size: 0.8rem;
+  margin-top: 10px;
+  color: #555;
 }
 
-/* ===================================
-   ACTIVE NAV LINK — DESKTOP + MOBILE
-
-   What this section does:
-   - Visually highlights the page the user is currently on
-   - Works for BOTH desktop navigation and mobile navigation
-
-   Why this matters:
-   - Users should never have to guess where they are on a site
-   - Clear navigation improves usability, accessibility, and professionalism
-   - This is standard behavior on real-world websites
-
-   Key idea for students:
-   - Navigation isn’t just decoration — it communicates location
-=================================== */
-
-/* Base styles for ALL navigation links */
-.main-nav a {
-  text-decoration: none;          /* Remove default underline */
-  padding: 10px 16px;             /* Create clickable space */
-  color: #333;                    /* Default text color */
-  border-radius: 999px;           /* Rounded “pill” shape */
-  transition: background 0.2s ease; /* Smooth hover/active effect */
+.icon-credit a {
+  color: #555;
+  text-decoration: none;
 }
 
-/* Hover state — gives feedback when user points at a link */
-.main-nav a:hover {
-  background: #eee;
-}
-
-/* ACTIVE LINK (Desktop)
-   This class is added to the link for the current page */
-.main-nav a.active {
-  background: #4a90e2;            /* Highlight color */
-  color: #fff;                    /* High contrast text */
-  font-weight: 600;               /* Emphasize current page */
-}
-
-/* ===================================
-   ACTIVE LINK — MOBILE NAV
-
-   Why mobile needs its own styles:
-   - Mobile menus often have dark backgrounds
-   - The active page needs to stand out MORE clearly
-=================================== */
-
-/* Highlight active link in mobile menu
-   Uses BOTH:
-   - .active class (manual control)
-   - aria-current="page" (accessibility best practice) */
-.mobile-nav a.active,
-.mobile-nav a[aria-current="page"]{
-  background: rgba(255,255,255,0.18); /* Soft highlight */
-  border: 1px solid rgba(255,255,255,0.22);
-  color: #ffffff;
-}
-
-/* Optional visual cue:
-   Adds a small colored dot to the left of the active link
-
-   Why this helps:
-   - Makes the active page obvious at a glance
-   - Helpful for mobile users and accessibility */
-.mobile-nav a.active::before,
-.mobile-nav a[aria-current="page"]::before{
-  content:"";                     /* Creates the dot */
-  display:inline-block;
-  width:10px;
-  height:10px;
-  border-radius:999px;            /* Circle */
-  background: var(--accent);      /* Accent color */
-  margin-right:10px;              /* Space between dot and text */
-}
-
-
-
-/*ChatGPT help to force header fix for colors*/
-/* FORCE header color (fix for GitHub issue) */
-header,
-.navbar {
-  background-color: #d9c7bb !important;
-}
-
-/*ChatGPT assistance to fix header issue*/
-header {
-  position: relative;
-  z-index: 10;
-}
-
-/*ChatGPT provided more code to help fix header after it did not appear correctly*/
-.navbar {
-  height: 64px;
-  background-color: #d9c7bb;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 22px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 750;
-}
-
-.brand img {
-  width: 28px;
-  height: 28px;
-}
-
-/* ===== FINAL NAV FIX ===== */
-
-.navbar {
-  display: flex;
-  align-items: center;
-  height: 64px;
-  padding: 0 22px;
-  background-color: #d9c7bb;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-/* push nav to right */
-.desktop-nav {
-  display: flex;
-  gap: 20px;
-  margin-left: auto;
-}
-
-/* hide checkbox completely */
-#menu-toggle {
-  display: none;
-}
-
-.hamburger {
-  display: none;
-}
-
-/* mobile only */
-@media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .hamburger {
-    display: block;
-    font-size: 24px;
-    cursor: pointer;
-  }
-
-  #menu-toggle:checked + .hamburger + .desktop-nav {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 64px;
-    right: 0;
-    width: 220px;
-    background-color: #d9c7bb;
-    padding: 15px;
-    gap: 12px;
-  }
-}
-
-/*ChatGPT help to move hamburger and nav to the right*/
-/* FINAL FIX — push menu to right */
-.desktop-nav {
-  margin-left: auto !important;
-  display: flex;
-  gap: 22px;
-}
-
-/* make navbar full width */
-.navbar {
-  width: 100%;
-  display: flex;
-  align-items: center;
+.icon-credit a:hover {
+  text-decoration: underline;
 }
