@@ -18,14 +18,27 @@ body {
 /*Extra help from ChatGPT for formatting placement of text on image*/
 /*hero image of mural taken of me by Jennifer McCarthy in New York City*/
 
-.hero-image{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  z-index:-1;
+.hero {
+  height: 90vh;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero-title,
+.hero-subtext {
+  position: absolute;
+  z-index: 1;
 }
 .hero h1 {
   font-size: 3rem;
