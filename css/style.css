@@ -18,10 +18,11 @@ body {
 /*Extra help from ChatGPT for formatting placement of text on image*/
 /*hero image of mural taken of me by Jennifer McCarthy in New York City*/
 
-/*ChatGPT help with removing shadowed boxes that came up during last edit*/
-
+/*ChatGPT help with removing shadowed box*/
+/*ChatGPT remove multiple hero sections removed with one good code*/
+/*CHatGPT assistance with reformating text after retrieving missing hero image*/
+  /*ChatGPT help removed extra hero text*/
 /* HERO SECTION */
-
 .hero {
   height: 90vh;
   position: relative;
@@ -38,14 +39,6 @@ body {
   object-fit: cover;
   z-index: 0;
 }
-
-/* TITLE */
-.hero-title {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  max-width: 600px;
-  z-index: 1;
 
 .hero-title {
   position: absolute;
@@ -70,71 +63,6 @@ body {
   font-size: 3rem;
   text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
-/* TITLE TEXT */
-.hero-title h1 {
-  font-size: 3rem;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-}
-
-
-.hero {
-  height: 90vh;
-  position: relative;
-  color: white;
-  overflow: hidden;
-}
-
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-}
-
-.hero-title,
-.hero-subtext {
-  position: absolute;
-  z-index: 1;
-}
-.hero h1 {
-  font-size: 3rem;
-}
-
-.hero{
-  height:90vh;
-  position:relative;
-  color:white;
-}
-
-/* HERO TEXT */
-/* Hero text from hero assignment */
-.hero-text {
-  background: rgba(0,0,0,0.4);
-  padding: 20px 40px;
-  border-radius: 8px;
-}
-/*ChatGPT placement of hero title on image help*/
-
-.hero-title {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-}
-
-/*CHatGPT assistance with reformating text after retrieving missing hero image*/
-.hero-title,
-.hero-subtext {
-  background: rgba(0, 0, 0, 0.4);
-  padding: 15px 25px;
-  border-radius: 8px;
-}
-
-
-
-
 
 /* NAVIGATION BAR */
 /* ChatGPT assistance with adding back border and nav on top along with hamburger menu */
