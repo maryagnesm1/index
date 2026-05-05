@@ -67,36 +67,7 @@ body {
 /* NAVIGATION BAR */
 /* ChatGPT assistance with adding back border and nav on top along with hamburger menu */
 
-/*Experiment*/
-/*ChapGPT helped after I showed screenshot of color from Canvas Color Palette Generator*/
-.main-nav {
-  position: sticky;
-  top: 0;
-  background-color: #E3D2C5;
-  border-top: 4px solid black;
-  border-bottom: 1px solid #ccc;
-  z-index: 100;
-}
-
-.nav-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.logo {
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 20px;
-}
+/*ChatGPT help removed extra nav bar*/
 
 /*ChatGPT suggestion to add hover and better usability since it give visual indicator when hovering over card*/
 
