@@ -71,16 +71,7 @@ body {
 
 /*ChatGPT suggestion to add hover and better usability since it give visual indicator when hovering over card*/
 
-.nav-links li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-.nav-links li a:hover {
-  text-decoration: underline;
-}
-
+/*ChatGPT removed extra nav bar and hover*/
 
 
 .menu-toggle {
