@@ -65,6 +65,15 @@ body {
   left: 40px;
 }
 
+/*CHatGPT assistance with reformating text after retrieving missing hero image*/
+.hero-title,
+.hero-subtext {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 15px 25px;
+  border-radius: 8px;
+}
+
+
 
 /*ChatGPT assistance with text to be placed lower left on hero image*/
 /*ChatGPT provided more assistance in making lower right text larger and more readable*/
