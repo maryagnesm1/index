@@ -18,6 +18,63 @@ body {
 /*Extra help from ChatGPT for formatting placement of text on image*/
 /*hero image of mural taken of me by Jennifer McCarthy in New York City*/
 
+
+/* HERO SECTION */
+
+.hero {
+  height: 90vh;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* TITLE */
+.hero-title {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  max-width: 600px;
+  z-index: 1;
+
+  background: rgba(0,0,0,0.4);
+  padding: 15px 25px;
+  border-radius: 8px;
+}
+
+/* SUBTEXT */
+.hero-subtext {
+  position: absolute;
+  bottom: 60px;
+  right: 60px;
+  max-width: 380px;
+  font-size: 1.4rem;
+  line-height: 1.6;
+  z-index: 1;
+
+  background: rgba(0,0,0,0.4);
+  padding: 15px 25px;
+  border-radius: 8px;
+
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+/* TITLE TEXT */
+.hero-title h1 {
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+
 .hero {
   height: 90vh;
   position: relative;
@@ -75,21 +132,8 @@ body {
 
 
 
-/*ChatGPT assistance with text to be placed lower left on hero image*/
-/*ChatGPT provided more assistance in making lower right text larger and more readable*/
-.hero-subtext {
-  position: absolute;
-  bottom: 60px;
-  right: 60px;
-  max-width: 380px;
-  font-size: 1.8rem;
-  line-height: 1.7;
-}
 
-/*ChatGPT help with readability added shadow help making text more readable against image*/
-.hero-subtext {
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-}
+
 /* NAVIGATION BAR */
 /* ChatGPT assistance with adding back border and nav on top along with hamburger menu */
 
