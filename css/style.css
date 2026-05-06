@@ -356,3 +356,18 @@ footer{
 .icon-credit a:hover {
   text-decoration: underline;
 }
+
+/*ChatGPT help to fix card size issues*/
+/* ABOUT PAGE CARD FIX */
+.card-media {
+  height: auto;
+  overflow: visible;
+}
+
+.card-media img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 25px auto;
+}
