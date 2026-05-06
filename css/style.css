@@ -122,11 +122,11 @@ section {
 }
 
 /*ChatGPT suggestion which helps with centering and readability on large monitors*/
-.section-inner {
+..section-inner {
   max-width: 1100px;
   margin: 0 auto;
+  text-align: center;
 }
-
 
 /* MOBILE FIRST PROMO BOX */
 /* Media queries from responsive design assignment */
@@ -198,11 +198,17 @@ section {
 /*ChatGPT assistance add this code to keep from stretching and help with sizing*/
 
 /*ChatGPT assistance to show icon on cards*/
-.card-media img{
-  width:120px;
-  height:auto;
-  display:block;
-  margin:25px auto;
+/*ChatGPT assistance to center the cards again*/
+..card-media img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+}
+
+.card {
+  text-align: center;
 }
 
 .card{
