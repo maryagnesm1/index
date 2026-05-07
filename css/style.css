@@ -44,11 +44,12 @@ body {
   z-index: 0;
 }
 
+/*ChatGPT assistance with overlay that showed up too dark*/
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(0, 0, 0, 0.32);
   z-index: 1;
 }
 
