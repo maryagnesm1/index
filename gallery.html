@@ -1,1 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Gallery Page</title>
+    <!--ChatGPT assistance adding new stylesheet for adding to index page-->
+    <link rel="stylesheet" href="./css/style.css?v=3">    
+ 
+</head>
+<body>
+
+<!--ChatGPT assistance with hamburger-->
+<nav class="navbar">
+  <div class="logo">Gallery Page</div>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+  <ul class="nav-links">
+     <li><a href="index.html">Home</a></li>
+     <li><a href="about.html">About Me</a></li>
+     <li><a href="gallery.html">Gallery</a></li>
+     <li><a href="media.html">Media</a></li>
+     <li><a href="contact.html">Contact Me</a></li>
+</ul>
+  
+</nav>
+
+<!--ChatGPT help with hero image not transfering to Github-->  
+<div class="hero-centered">
+  
+
+  <h2>Mary's Gallery Page</h2>
+  <p>Featured images from 19th Century Art History. Images from The National Gallery of Art in Washington, DC</p>
+  <button class="cta-button">Get Started</button>
+</div>
+
+    
+<!--ChatGPT assistance with centering gallery text-->
+
+
+<!--ChatGPT assistance with images formating size to 1000 pixes as well as title for image source after imagaes that did not load in github-->
+
+<!--ChatGPT help with adding hover-->
+
+<!--ChatGPT assistance with replacing Monet section-->
+<section class="monet-section">
+  <h2>Claude Monet</h2>
+  <p>Known for his beautiful waterlilies and vivid colored landscapes</p>
+
+  <div class="masonry-grid">
+    <div class="masonry-item"
+         style="grid-row: span 2;"
+         onclick="showInfo(this)"
+         data-title="The Artist's Garden at Vétheuil"
+         data-year="1880"
+         data-desc="A luminous garden scene filled with color and light.">
+      <img src="./images/gardenvetheuil.jpg" alt="oil painting showing bridge with water lilies by Claude Monet">
+    </div>
+           
+
+
+    <div class="masonry-item"
+         style="grid-row: span 5;"
+         onclick="showInfo(this)"
+         data-title="Woman with a Parasol"
+         data-year="1875"
+         data-desc="A breezy outdoor scene showing Monet's interest in light and movement.">
+     <img src="./images/womanparasol.jpg" alt="oil painting showing woman holding a parasol with young child by Claude Monet">
+     </div>
+
+    <div class="masonry-item"
+         style="grid-row: span 4;"
+         onclick="showInfo(this)"
+         data-title="Bazille and Camille"
+         data-year="1865"
+         data-desc="A study featuring Camille Monet and Frédéric Bazille.">
+      <img src="./images/bazillecamille.jpg" alt="Bazille and Camille painting by Claude Monet">
+    </div>
+
+
+
+    </div>
+
+    <!--removed two extra text cards due to time may add back-->
+  <!--ChatGPT aside panel help-->
+  <aside class="info-panel" id="info-panel">
+    <p>Click a card to see details.</p>
+  </aside>
+</section>
+
+
+<!--ChatGPT assistance with replacing Degas section-->
+<section class="degas-section">
+  <h2>Edgar Degas</h2>
+  <p>Known for studies of ballet dancers with painting and sculpture</p>
+
+  <div class="masonry-grid">
+    <div class="masonry-item"
+         style="grid-row: span 3;"
+         onclick="showInfo(this)"
+         data-title="Four Dancers"
+         data-year="1899"
+         data-desc="A study of ballerinas showing Degas' interest in movement.">  
+    <img src="./images/fourdancers.jpg" alt="Four Dancers">
+    </div>
+      <div class="masonry-item"
+         style="grid-row: span 5;"
+         onclick="showInfo(this)"
+         data-title="Little Dancer"
+         data-year="1881"
+         data-desc="A famous sculpture of a young ballet student.">
+      <img src="./images/littledancer.jpg" alt="Little Dancer">
+    </div>
+
+    <div class="masonry-item"
+         style="grid-row: span 4;"
+         onclick="showInfo(this)"
+         data-title="Woman Viewed from Behind"
+         data-year=""
+         data-desc="Woman shown window shopping.">
+     <img src="./images/womanviewedfrombehind.jpg" alt="Woman Viewed from Behind">
+    </div>
+
+    <div class="masonry-item"
+         style="grid-row: span 2;"
+         onclick="showInfo(this)"
+         data-title="Horse with Head Lowered"
+         data-year=""
+         data-desc="Horse sculpture made of bees wax.">   
+    <img src="./images/horsewithheadlowered.jpg" alt="Horse with Head Lowered">
+    </div>
+  </div>
+
+
+</section>
+
+   
+
+
+
+<!--ChatGPT assistance with replacing Renoir section-->
+<section class="renoir-section">
+  <h2>August Renoir</h2>
+  <p>A great portrait artist.</p>
+
+  <div class="masonry-grid">
+    <div class="masonry-item"
+         style="grid-row: span 2;"
+         onclick="showInfo(this)"
+         data-title="Odalisque"
+         data-year="1870"
+         data-desc="A woman reclining in colorful costume">
+        <img src="./images/odalisque.jpg" alt="Odalisque">    
+    </div>
+
+    <div class="masonry-item"
+         style="grid-row: span 6;"
+         onclick="showInfo(this)"
+         data-title="The Dancer"
+         data-year="1874"
+         data-desc="Study of a young ballet dancer.">
+      <img src="./images/thedancer.jpg" alt="The Dancer">
+    </div>
+
+    <div class="masonry-item"
+         style="grid-row: span 4;"
+         onclick="showInfo(this)"
+         data-title="Claude Monet"
+         data-year="1875"
+         data-desc="Portrait of fellow Impressionist artist Claude Monet.">
+      <img src="./images/claudemonet.jpg" alt="Portrait of fellow artist Claude Monet">
+    </div>
+
+    <div class="masonry-item"
+         style="grid-row: span 3;"
+         onclick="showInfo(this)"
+         data-title="Oarsmen at Chatou"
+         data-year="1879"
+         data-desc="Scene of men watching boat sail.">
+      <img src="./images/oarsmenatchatou.jpg" alt="Oarsmen at Chatou">
+    </div>
+
+  <!--removed 2 extra cards-->
+   
+  </div>
+
+</section>
+
+
+<footer>
+
+  <p>&copy; 2026 Mary Mazujian</p>
+</footer>
+
+<script>
+function showInfo(card) {
+  document.querySelectorAll('.masonry-item').forEach(item => {
+    item.classList.remove('selected');
+  });
+
+  card.classList.add('selected');
+
+  const title = card.dataset.title || "Untitled";
+  const year = card.dataset.year || "";
+  const desc = card.dataset.desc || "No description available.";
+
+  document.getElementById('info-panel').innerHTML = `
+    <h3>${title}</h3>
+    <div class="year">${year}</div>
+    <p>${desc}</p>
+  `;
+}
+</script>
+
+</body>
+</html>
