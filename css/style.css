@@ -443,4 +443,25 @@ footer{
   }
 }
 
+/*ChatGPT assistance with centering text for Media page to display centered on GitHub*/
+/* MEDIA PAGE CENTERING */
+.media-section {
+  text-align: center;
+  margin: 40px auto;
+}
+
+.media-section h2,
+.card-gallery h3,
+.content-float {
+  text-align: center;
+}
+
+.neu-icon {
+  margin: 15px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
