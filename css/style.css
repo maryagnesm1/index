@@ -416,6 +416,13 @@ footer{
   object-fit: cover;
 }
 
+/*ChatGPT help added to show Media hero videi*/
+#museumVideo {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+}
 
 @media (max-width: 768px) {
   .hero-content h1 {
