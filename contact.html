@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <!--working on favicon issue ChatGPT assistance-->
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+<header>
+  <nav class="navbar">
 
+
+  
+<!--Playground source for form code-->
+<!--sample original regular form-->
+<!--ChatGPT assistance with matching header with other pages-->  
+
+<div class="logo">
+  <img src="images/icon.svg" class="logo-icon" alt="Painter palette icon">
+  Mary's Contact Page
+</div>
+
+
+    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <div class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Me</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="media.html" class="active">Media</a>
+      <a href="contact.html">Contact Me</a>
+    </div>
+
+  </nav>
+</header>
+
+  
+<!--Split screen code original from Playground code-->
+<!--Image of oil painting by Johannes Vermeer titled "A Lady Writing" from National Gallery Creative Commons-->
+ 
+
+  <!--Sample split screen form code-->
+  <!--ChatGPT assistance changing image to video-->
+  <!--ChatGPT help with changing original image size to card size-->
+<section class="split">
+  <div class="left-video">
+    <video autoplay muted loop playsinline
+           poster="media/vermeerladywriting.jpg" <alt="Painter palette icon">
+           aria-label="Woman writing a letter with feathered pen">
+      <source src="media/vermeerladywriting.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <main class="contact-wrapper">
+    <h1>Send us a message</h1>
+
+    <p class="intro">
+      Feel free to complete contact form for more information about A Time Traveler's Journey
+    </p>
+
+    <form action="https://formspree.io/f/xgodvgdk" method="POST">
+
+      <input type="hidden" name="_subject" value="New message from Mary's Contact Page">
+
+      <label>Name:</label>
+      <input type="text" name="name" required>
+
+      <label>Email:</label>
+      <input type="email" name="email" required>
+
+      <label>Subject:</label>
+      <input type="text" name="subject" required>
+
+      <label>Message:</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">Submit Form</button>
+
+    </form>
+  </main>
+
+</section>
+
+
+
+
+<footer>
+  <p>&copy; 2026 Mary Mazujian</p>
+</footer>
+<!-- ChatGPT assistance setting up JavaScript code -->
+<!--ChatGPT help moved JavaScript to index so extra buttons for video and audio will work in GitHub-->
+<script src="./js/script.js?v=5" defer></script>
+</body>
+</html>
