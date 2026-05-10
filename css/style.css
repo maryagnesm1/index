@@ -536,3 +536,79 @@ footer{
     padding: 30px 20px;
   }
 }
+
+
+
+/*ChatGPT provided more code to fix split screen*/
+/* CONTACT PAGE */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+
+.left-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.contact-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+}
+
+.contact-wrapper h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.intro {
+  margin-bottom: 30px;
+  max-width: 500px;
+}
+
+.contact-wrapper form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-wrapper input,
+.contact-wrapper textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+.contact-wrapper textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-wrapper button {
+  width: fit-content;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: #d9c7bb;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-wrapper {
+    padding: 30px 20px;
+  }
+}
