@@ -612,3 +612,10 @@ footer{
     padding: 30px 20px;
   }
 }
+
+/*ChatGPT help with contact icon sizing*/
+.logo-icon {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+}
