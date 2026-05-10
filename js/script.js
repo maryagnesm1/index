@@ -1,17 +1,41 @@
-function showInfo(card) {
-  document.querySelectorAll('.masonry-item').forEach(item => {
-    item.classList.remove('selected');
-  });
+document.addEventListener("DOMContentLoaded", () => {
 
-  card.classList.add('selected');
+  const video = document.getElementById("museumVideo");
+  const videoBtn = document.getElementById("videoBtn");
 
-  const title = card.dataset.title || "Untitled";
-  const year = card.dataset.year || "";
-  const desc = card.dataset.desc || "No description available.";
+  const audio = document.getElementById("museumAudio");
+  const audioBtn = document.getElementById("audioBtn");
 
-  document.getElementById('info-panel').innerHTML = `
-    <h3>${title}</h3>
-    <div class="year">${year}</div>
-    <p>${desc}</p>
-  `;
-}
+  if (video && videoBtn) {
+
+    videoBtn.addEventListener("click", () => {
+
+      if (video.paused) {
+        video.play();
+        videoBtn.innerHTML = "❚❚";
+      } else {
+        video.pause();
+        videoBtn.innerHTML = "▶";
+      }
+
+    });
+
+  }
+
+  if (audio && audioBtn) {
+
+    audioBtn.addEventListener("click", () => {
+
+      if (audio.paused) {
+        audio.play();
+        audioBtn.innerHTML = "❚❚";
+      } else {
+        audio.pause();
+        audioBtn.innerHTML = "▶";
+      }
+
+    });
+
+  }
+
+});
